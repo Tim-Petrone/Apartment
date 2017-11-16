@@ -6,7 +6,10 @@ git_source(:github) do |repo_name|
 end
 
 gem 'paperclip'
+gem 'devise'
 gem 'textacular'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record
