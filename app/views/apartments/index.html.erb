@@ -1,6 +1,18 @@
-<p id="notice">You are logged on using your email:</p>
+<head>
 
+</head>
+  <body>
+    <div class="jumbotron">
+      <h1 class="display-3">Echo Apartments</h1>
+      <p class="lead"></p>
+      <hr class="my-4">
+      <p></p>
+    </div>
 <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+<br />
+<% if @ability.can? :manage, :all %>
+<td><%= link_to 'Admin Page', '/admin' %></td>
+<% end %>
 
 
 <h1>Apartments</h1>
@@ -10,9 +22,6 @@
   <input type="submit" value="Search">
 </form>
 
-<% if @ability.can? :manage, :all %>
-<td><%= link_to 'Admin Page', '/admin' %></td>
-<% end %>
 
 <table>
   <thead>
@@ -58,3 +67,4 @@
 <br>
 
 <%= link_to 'New Apartment', new_apartment_path %>
+</body>

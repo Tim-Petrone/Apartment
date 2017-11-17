@@ -1,3 +1,56 @@
 // Place all the styles related to the Apartments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  color: blue;
+  text-align: center;
+  text-shadow: 2px 2px lightgrey;
+}
+
+table {
+  border: 5px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+td {
+  border: 2px solid grey;
+  margin: 0px;
+}
+
+th {
+  border: 2px dotted black;
+  margin: 0px;
+}
+
+.jumbotron {
+  background-image: url(http://cdngeneral.rentcafe.com/dmslivecafe/3/579507/externalOne_1.JPG?quality=85&scale=both&);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.jumbotron h1 {
+  font-size: 3rem;
+  padding: 25px;
+  background-color: rgba(255, 255, 255, .75);
+
+}
