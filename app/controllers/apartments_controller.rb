@@ -1,10 +1,13 @@
 class ApartmentsController < ApplicationController
   before_action :set_apartment, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!
+  load_and_authorize_resource
   # GET /apartments
   # GET /apartments.json
   def index
     @apartments = Apartment.all
+    # raise params.inspect
+    @ability = Ability.new(current_user)
   end
 
   # GET /apartments/1
@@ -76,4 +79,5 @@ class ApartmentsController < ApplicationController
     def apartment_params
       params.require(:apartment).permit(:address, :city, :state, :country, :postal_code, :address2, :manager_name, :manager_number, :hours, :image)
     end
+
 end
