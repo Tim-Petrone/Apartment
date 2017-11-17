@@ -66,6 +66,7 @@ class ApartmentsController < ApplicationController
 
   def basic_search
     @apartments = Apartment.basic_search(params[:basic_search])
+    @ability = Ability.new(current_user)
     render 'index.html.erb'
   end
 

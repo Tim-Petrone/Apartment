@@ -11,10 +11,14 @@
   <% @users.each do |user| %>
     <tr>
       <td><%= user.email %></td>
-      <td><%= user.roles.last.name %></td>
+      <% if user.roles.empty? %>
+        <td> <%=""%> </td>
+      <% else %>
+        <td><%= user.roles.last.name %></td>
+      <% end %>
       <td>
-        <%= form_tag("/admin/" + user.id.to_s + "?role=user", method: :PUT) do %>
-          <input type="submit" value="Make User"/>
+        <%= form_tag("/admin/" + user.id.to_s + "?role=admin", method: :PUT) do %>
+          <input type="submit" value="Make Admin"/>
         <% end %>
       </td>
     </tr>

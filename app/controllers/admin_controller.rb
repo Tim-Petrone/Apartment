@@ -6,7 +6,7 @@ class AdminController < ApplicationController
   def update
     user = User.find(params[:id])
    user.roles = []
-   user.add_role(:user)
+   user.add_role(:admin)
    redirect_to '/admin'
   end
 
